@@ -21,7 +21,7 @@ public class EmpresaModel implements Serializable {
     private String nome;
 
     @Column(nullable = false, length = 14, unique = true)
-    private Long cnpj;
+    private String cnpj;
 
     @Column(nullable = false, length = 50)
     private String nomeFantasia;
@@ -33,7 +33,7 @@ public class EmpresaModel implements Serializable {
     private Integer telefone;
 
     @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "endereco_id")
+    @JoinColumn(name = "endereco_id", foreignKey = @ForeignKey(name = "FK_EMPRESA_ENDERECO"))
     private EnderecoModel endereco;
 
 }

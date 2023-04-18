@@ -25,11 +25,11 @@ public class ConsoleGameModel implements Serializable {
     private Float valor;
 
     @ManyToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "id_console")
+    @JoinColumn(name = "id_console", foreignKey = @ForeignKey(name = "FK_CONSOLE_GAME_CONSOLE"))
     private ConsoleModel console;
 
     @ManyToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "id_game")
+    @JoinColumn(name = "id_game", foreignKey = @ForeignKey(name = "FK_CONSOLE_GAME_GAME"))
     private GameModel game;
 
 }

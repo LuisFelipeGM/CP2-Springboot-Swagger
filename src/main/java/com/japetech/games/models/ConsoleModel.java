@@ -21,7 +21,7 @@ public class ConsoleModel implements Serializable {
     private String nome;
 
     @ManyToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "id_empresa")
+    @JoinColumn(name = "id_empresa", foreignKey = @ForeignKey(name = "FK_CONSOLE_EMPRESA"))
     private EmpresaModel empresa;
 
 }
