@@ -10,13 +10,13 @@ import java.io.Serializable;
 @Data
 public class EnderecoDto  {
 
-    private Long id;
-
     @NotBlank(message = "O logradouro é obrigatório")
     @Size (max = 100, message = "O logradouro deve ter no máximo 100 caracteres")
     private String logradouro;
 
-    private Integer numero;
+    @NotBlank(message = "O número é obrigatório")
+    @Size(max = 10, message = "O logradouro deve ter no máximo 10 caracteres")
+    private String numero;
 
     @NotBlank(message = "O bairro é obrigatório")
     @Size(max = 50, message = "O bairro ter no máximo 50 caracteres")
@@ -31,5 +31,6 @@ public class EnderecoDto  {
     private String estado;
 
     @NotBlank(message = "O cep é obrigatório")
+    @Size(max = 8, message = "O estado ter no máximo 2 caracteres")
     private String cep;
 }

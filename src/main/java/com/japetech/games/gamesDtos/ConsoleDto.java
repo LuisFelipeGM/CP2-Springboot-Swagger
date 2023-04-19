@@ -1,6 +1,7 @@
 package com.japetech.games.gamesDtos;
 
 import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
 import lombok.Data;
 
@@ -13,6 +14,7 @@ public class ConsoleDto {
     @Size(max = 50, message = "O nome do console deve ter no máximo 50 caracteres")
     private String nome;
 
-    private EmpresaDto empresa;
+    @NotNull
+    private Long idEmpresa;
 
 }
