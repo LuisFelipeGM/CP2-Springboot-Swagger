@@ -38,6 +38,6 @@ public class EnderecoDto  {
 
     @Schema(example = "04551-902")
     @NotBlank(message = "O cep é obrigatório")
-    @Size(max = 9, message = "O estado ter no máximo 2 caracteres")
+    @Size(message = "O estado ter no máximo 2 caracteres")
     private String cep;
 }
