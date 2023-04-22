@@ -20,7 +20,7 @@ public class EmpresaModel implements Serializable {
     @Column(nullable = false, length = 50)
     private String nome;
 
-    @Column(nullable = false, length = 14, unique = true)
+    @Column(nullable = false, length = 18, unique = true)
     private String cnpj;
 
     @Column(nullable = false, length = 50)
@@ -35,5 +35,4 @@ public class EmpresaModel implements Serializable {
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "endereco_id", foreignKey = @ForeignKey(name = "FK_EMPRESA_ENDERECO"))
     private EnderecoModel endereco;
-
 }
